@@ -1,6 +1,6 @@
 import pool from '../db/pool.js'
 
-export const resolver = {
+export const resolvers = {
 
     Query: {
     
@@ -24,7 +24,7 @@ export const resolver = {
                 'SELECT * FROM posts  WHERE id= $1', [id]
             )
 
-            return result.rows[0] //single row
+            return result.rows[0] 
         },
 
     },
@@ -40,7 +40,7 @@ export const resolver = {
                 [title, body]
             )
 
-            return result.rows[0] // return created post 
+            return result.rows[0] 
         }, 
 
         updatePost: async (_, {id, input})=>{
